@@ -1,0 +1,98 @@
+body {
+  background: rgba(179, 229, 252, 0.7);
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  border: 2px solid black;
+  margin: 60px auto;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: white;
+  border: none;
+  width: 700px;
+  box-shadow: -1px 2px 20px 5px rgba(0, 0, 0, 0.6);
+}
+
+form {
+  font-size: 60px;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 50px;
+}
+
+a {
+  color: #0abdd4;
+}
+
+form input {
+  font-size: 18px;
+  border-radius: 6px;
+  padding: 20px;
+  border: none;
+  transition: all 200ms ease-in-out;
+}
+
+form input:visited {
+  border: 1px solid black;
+}
+
+.searchcity {
+  background: rgba(179, 229, 252, 0.4);
+  width: 80%;
+}
+.submitbutton {
+  background: #07c1d9;
+  border: none;
+  color: white;
+}
+.submitbutton:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.current-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-emoji {
+  font-size: 44px;
+  position: relative;
+  top: 38px;
+}
+
+.current-temp {
+  font-size: 80px;
+  font-weight: bolder;
+  position: relative;
+  top: 48px;
+}
+
+sup.temp {
+  font-size: 28px;
+  font-weight: normal;
+  position: relative;
+  top: -15px;
+}
+
+.current-info p {
+  color: #757575;
+  line-height: 1.5em;
+  font-size: 17px;
+}
+
+.current-info p strong {
+  color: #0e7fbc;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  padding-top: 20px;
+  text-align: center;
+  color: #757575;
+}
