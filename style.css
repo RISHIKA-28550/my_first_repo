@@ -19,7 +19,7 @@ form {
   padding: 20px;
   text-align: center;
   border-bottom: 1px solid #f9f7fe;
-  padding-bottom: 50px;
+  padding-bottom: 38px;
 }
 
 a {
@@ -52,7 +52,8 @@ form input:visited {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 44px;
+  margin-bottom: 0px;
 }
 
 .current-info {
@@ -84,7 +85,8 @@ sup.temp {
 .current-info p {
   color: #757575;
   line-height: 1.5em;
-  font-size: 17px;
+  font-size: 18px;
+  margin-top: 14px;
 }
 
 .current-info p strong {
@@ -96,4 +98,9 @@ footer {
   padding-top: 20px;
   text-align: center;
   color: #757575;
+}
+
+div.temp {
+  position: relative;
+  top: -24px;
 }
