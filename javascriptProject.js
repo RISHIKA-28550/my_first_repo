@@ -24,6 +24,8 @@ function handleSEarchSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSEarchSubmit);
 
+searchCity("New Delhi");
+
 //date and time change
 
 let currDayandTime = document.querySelector("#dayAndTime");
