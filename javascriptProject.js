@@ -1,6 +1,6 @@
 //real time temperature
 
-function showCurrTemp(response) {
+function showCurrTempandCity(response) {
   let currTemp = Math.round(response.data.temperature.current);
   let mainTempElement = document.querySelector("#current-temp");
   mainTempElement.innerHTML = `${currTemp}`;
@@ -9,24 +9,20 @@ function showCurrTemp(response) {
   mainheading.innerHTML = response.data.city;
 }
 
-function changeValues(event) {
-  event.preventDefault();
-
-  //heading change
-
-  let cityEntered = document.querySelector("#searchcity");
-  let city = cityEntered.value;
-
-  //current temperature display
-
+function searchCity(city) {
   let apiKey = "bafoe10ec41e43fbd136804atbea3503";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(showCurrTempandCity);
+}
 
-  axios.get(apiURL).then(showCurrTemp);
+function handleSEarchSubmit(event) {
+  event.preventDefault();
+  let cityEntered = document.querySelector("#searchcity");
+  searchCity(cityEntered.value);
 }
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", changeValues);
+form.addEventListener("submit", handleSEarchSubmit);
 
 //date and time change
 
