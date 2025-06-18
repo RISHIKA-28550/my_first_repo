@@ -15,6 +15,9 @@ function refreshWeatherDetails(response) {
   let mainCityheading = document.querySelector("h1");
   mainCityheading.innerHTML = response.data.city;
 
+  let mainEmoji = document.querySelector("#main-temp-emoji");
+  mainEmoji.innerHTML = `<img src="${response.data.condition.icon_url}" alt="main-emoji" class="main-emoji"/>`;
+
   //date and time change
 
   let currDayandTime = document.querySelector("#dayAndTime");
