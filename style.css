@@ -7,8 +7,8 @@ body {
   border: 2px solid black;
   margin: 60px auto;
   border-radius: 20px;
-  padding: 40px;
-  background-color: white;
+  padding: 45px;
+  background-color: rgba(255, 255, 255, 0.85);
   border: none;
   width: 700px;
   box-shadow: -1px 2px 20px 5px rgba(0, 0, 0, 0.6);
@@ -42,7 +42,15 @@ form {
 }
 
 a {
-  color: #0abdd4;
+  color: #3399aa;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #1976d2;
+  text-decoration: underline;
 }
 
 form input {
@@ -58,14 +66,19 @@ form input:visited {
 }
 
 .searchcity {
-  background: rgba(179, 229, 252, 0.4);
+  background-color: #a8c9d9;
   width: 80%;
 }
-.submitbutton {
-  background: #07c1d9;
-  border: none;
-  color: white;
+.searchcity::placeholder {
+  color: #2c3e50;
 }
+
+.submitbutton {
+  background-color: #3aaed8;
+  border: none;
+  color: #ffffff;
+}
+
 .submitbutton:hover {
   cursor: pointer;
 }
@@ -114,8 +127,9 @@ sup.temp {
 
 footer {
   border-top: 1px solid #f9f7fe;
-  padding-top: 20px;
+  padding-top: 30px;
   text-align: center;
+  font-size: 17px;
   color: #757575;
 }
 

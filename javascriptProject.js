@@ -64,7 +64,7 @@ function refreshWeatherDetails(response) {
   ) {
     changeVideoSmoothly("videos/rain.mp4");
   } else if (details.includes("cloud") || details.includes("overcast")) {
-    changeVideoSmoothly("videos/scatteredclouds.mp4");
+    changeVideoSmoothly("videos/videocloud.mp4");
   } else if (details.includes("clear") || details.includes("sunny")) {
     changeVideoSmoothly("videos/sunny.mp4");
   } else if (
@@ -79,7 +79,7 @@ function refreshWeatherDetails(response) {
     details.includes("breeze") ||
     details.includes("gust")
   ) {
-    changeVideoSmoothly("videos/scatteredclouds.mp4");
+    changeVideoSmoothly("videos/wind.mp4");
   }
 }
 
