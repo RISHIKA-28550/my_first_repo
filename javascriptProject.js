@@ -54,3 +54,33 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSEarchSubmit);
 
 searchCity("New Delhi");
+
+//WEATHER FORECAST
+
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+        <div class="weather-forecast-days">
+          <div class="weather-forecast-day">${day}</div>
+          <div class="weather-forecast-icon">☀️</div>
+          <div class="weather-forecast-temperatures">
+            <div class="weather-forecast-temp">
+              <strong>15°</strong>
+            </div>
+            <div class="weather-forecast-temp">
+              9°
+            </div>
+          </div>  
+        </div>
+    `;
+  });
+  forecast.innerHTML = forecastHtml;
+}
+
+let forecast = document.querySelector("#forecast");
+displayForecast();
