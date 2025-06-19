@@ -36,6 +36,51 @@ function refreshWeatherDetails(response) {
   let hour = now.getHours().toString().padStart(2, "0");
   let minutes = now.getMinutes().toString().padStart(2, "0");
   currDayandTime.innerHTML = `${day} ${hour}:${minutes}`;
+
+  //video change
+
+  const video = document.querySelector("#videobg");
+
+  function changeVideoSmoothly(newSrc) {
+    video.classList.add("fade-out");
+
+    video.addEventListener("transitionend", function handleFade() {
+      video.innerHTML = `<source id="video-source" src="${newSrc}" type="video/mp4">`;
+      video.load();
+      video.play();
+
+      video.classList.remove("fade-out");
+
+      video.removeEventListener("transitionend", handleFade);
+    });
+  }
+
+  let details = response.data.condition.description;
+
+  if (
+    details.includes("rain") ||
+    details.includes("drizzle") ||
+    details.includes("shower")
+  ) {
+    changeVideoSmoothly("videos/rain.mp4");
+  } else if (details.includes("cloud") || details.includes("overcast")) {
+    changeVideoSmoothly("videos/scatteredclouds.mp4");
+  } else if (details.includes("clear") || details.includes("sunny")) {
+    changeVideoSmoothly("videos/sunny.mp4");
+  } else if (
+    details.includes("fog") ||
+    details.includes("mist") ||
+    details.includes("haze") ||
+    details.includes("smoke")
+  ) {
+    changeVideoSmoothly("videos/haze.mp4");
+  } else if (
+    details.includes("wind") ||
+    details.includes("breeze") ||
+    details.includes("gust")
+  ) {
+    changeVideoSmoothly("videos/scatteredclouds.mp4");
+  }
 }
 
 function searchCity(city) {
@@ -84,3 +129,16 @@ function displayForecast() {
 
 let forecast = document.querySelector("#forecast");
 displayForecast();
+
+// const video = document.querySelector("#videobg");
+// const source = document.getElementById("video-source");
+// if () {
+//   source.setAttribute("src", "rain.mp4");
+// } else if (description.textContent.toLowerCase().includes("clouds")) {
+//   source.setAttribute("src", "scatteredclouds.mp4");
+// } else {
+//   source.setAttribute("src", "videocloud.mp4");
+// }
+
+// video.load(); // reload the new video
+// video.play();

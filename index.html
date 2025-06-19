@@ -8,67 +8,73 @@
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <form action="/submit" id="search-form">
-        <input
-          type="search"
-          placeholder="Enter a city.."
-          required
-          class="searchcity"
-          id="searchcity"
-        />
-        <input
-          type="submit"
-          value="Search"
-          class="submitbutton"
-          id="submitbutton"
-        />
-      </form>
+    <div>
+      <video id="videobg" autoplay loop muted playsinline class="background-video">
+        <source id="video-source" src="videos/videocloud.mp4" type="video/mp4">
+      </video>
+      
+      <div class="container">
+        <form action="/submit" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="searchcity"
+            id="searchcity"
+          />
+          <input
+            type="submit"
+            value="Search"
+            class="submitbutton"
+            id="submitbutton"
+          />
+        </form>
 
-      <div class="current-info">
-        <div>
-          <h1>New Delhi</h1>
-          <p>
-            <span id="dayAndTime"></span>,
-            <span id="weather-description"></span>
-            <br />
-            Humidity: <strong id="humidity"></strong>, Wind:
-            <strong id="wind"></strong>
-          </p>
+        <div class="current-info">
+          <div>
+            <h1>New Delhi</h1>
+            <p>
+              <span id="dayAndTime"></span>,
+              <span id="weather-description"></span>
+              <br />
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind"></strong>
+            </p>
+          </div>
+
+          <div class="temp">
+            <span
+              ><span id="main-temp-emoji"></span>
+            <span class="current-temp"
+              ><span id="current-temp">14</span><sup class="temp">°C</sup></span
+            >
+          </div>
         </div>
 
-        <div class="temp">
-          <span
-            ><span id="main-temp-emoji"></span>
-          <span class="current-temp"
-            ><span id="current-temp">14</span><sup class="temp">°C</sup></span
+        <div class="week-forecast" id="forecast"></div>
+
+        <br />
+        <footer class="author">
+          This project was coded by
+          <a href="https://www.linkedin.com/in/rishika-a61062325/" target="_blank"
+            >Rishika</a
           >
-        </div>
+          open sourced
+          <a
+            href="https://github.com/RISHIKA-28550/my_first_repo.git"
+            target="_blank"
+            >on GitHub</a
+          >
+          and
+
+          <a
+            href="https://magnificent-rolypoly-f70183.netlify.app/"
+            target="_blank"
+            >hosted on Netlify</a
+          >
+        </footer>
       </div>
-
-      <div class="week-forecast" id="forecast"></div>
-
-      <br />
-      <footer class="author">
-        This project was coded by
-        <a href="https://www.linkedin.com/in/rishika-a61062325/" target="_blank"
-          >Rishika</a
-        >
-        open sourced
-        <a
-          href="https://github.com/RISHIKA-28550/my_first_repo.git"
-          target="_blank"
-          >on GitHub</a
-        >
-        and
-
-        <a
-          href="https://magnificent-rolypoly-f70183.netlify.app/"
-          target="_blank"
-          >hosted on Netlify</a
-        >
-      </footer>
-    </div>
+  </div>
     <script src="javascriptProject.js"></script>
   </body>
 </html>
