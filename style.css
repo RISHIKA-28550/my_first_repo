@@ -104,3 +104,33 @@ div.temp {
   position: relative;
   top: -24px;
 }
+
+.week-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin: 35px 0 20px 0;
+}
+
+.weather-forecast-day {
+  text-align: center;
+  color: #757575;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.weather-forecast-icon {
+  font-size: 38px;
+  text-align: center;
+}
+
+.weather-forecast-temperatures {
+  text-align: center;
+  color: #0e7fbc;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.weather-forecast-temp {
+  padding: 0 8px;
+}
