@@ -19,24 +19,10 @@ function refreshWeatherDetails(response) {
   mainEmoji.innerHTML = `<img src="${response.data.condition.icon_url}" alt="main-emoji" class="main-emoji"/>`;
 
   //date and time change
-
   let currDayandTime = document.querySelector("#dayAndTime");
-  let now = new Date();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  let day = days[now.getDay()];
-  let hour = now.getHours().toString().padStart(2, "0");
-  let minutes = now.getMinutes().toString().padStart(2, "0");
-  currDayandTime.innerHTML = `${day} ${hour}:${minutes}`;
-
+  let date = new Date(response.data.time * 1000);
+  currDayandTime.innerHTML = formatDate(date);
+  
   //video change
 
   const video = document.querySelector("#videobg");
@@ -81,6 +67,24 @@ function refreshWeatherDetails(response) {
   ) {
     changeVideoSmoothly("videos/wind.mp4");
   }
+}
+
+function formatDate(date){
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+  let hour = date.getHours().toString().padStart(2, "0");
+  let minutes = date.getMinutes().toString().padStart(2, "0");
+  let result = `${day} ${hour}:${minutes}`;
+  return result;
 }
 
 function searchCity(city) {

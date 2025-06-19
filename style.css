@@ -86,6 +86,8 @@ form input:visited {
 h1 {
   font-size: 44px;
   margin-bottom: 0px;
+  text-shadow: 4px 3px 10px rgba(28, 28, 28, 0.3);
+  color: #000000;
 }
 
 .current-info {
@@ -104,6 +106,8 @@ h1 {
   font-weight: bolder;
   position: relative;
   top: 48px;
+  text-shadow: 4px 4px 10px rgba(49, 46, 46, 0.45);
+  color: #000000;
 }
 
 sup.temp {
@@ -115,7 +119,7 @@ sup.temp {
 }
 
 .current-info p {
-  color: #757575;
+  color: rgba(44, 62, 80,0.8);
   line-height: 1.5em;
   font-size: 18px;
   margin-top: 14px;
@@ -130,7 +134,7 @@ footer {
   padding-top: 30px;
   text-align: center;
   font-size: 17px;
-  color: #757575;
+  color: rgba(44, 62, 80,0.8);
 }
 
 div.temp {
@@ -146,7 +150,7 @@ div.temp {
 
 .weather-forecast-day {
   text-align: center;
-  color: #757575;
+  color: rgba(44, 62, 80,0.8);
   line-height: 20px;
   margin-bottom: 8px;
 }
