@@ -44,7 +44,7 @@ form {
 a {
   color: #3399aa;
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.1s ease-in-out;
   font-weight: bold;
 }
 
@@ -65,12 +65,16 @@ form input:visited {
   border: 1px solid black;
 }
 
+input.filled {
+  background-color: rgba(108, 168, 198, 0.8);
+}
+
 .searchcity {
   background-color: #a8c9d9;
   width: 80%;
 }
 .searchcity::placeholder {
-  color: #2c3e50;
+  color: #2c3e12;
 }
 
 .submitbutton {
@@ -84,7 +88,7 @@ form input:visited {
 }
 
 h1 {
-  font-size: 44px;
+  font-size: 42px;
   margin-bottom: 0px;
   text-shadow: 4px 3px 10px rgba(28, 28, 28, 0.3);
   color: #000000;
@@ -119,10 +123,10 @@ sup.temp {
 }
 
 .current-info p {
-  color: rgba(44, 62, 80,0.8);
+  color: rgba(44, 62, 80, 0.8);
   line-height: 1.5em;
   font-size: 18px;
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .current-info p strong {
@@ -134,7 +138,7 @@ footer {
   padding-top: 30px;
   text-align: center;
   font-size: 17px;
-  color: rgba(44, 62, 80,0.8);
+  color: rgba(44, 62, 80, 0.8);
 }
 
 div.temp {
@@ -148,16 +152,29 @@ div.temp {
   margin: 35px 0 20px 0;
 }
 
+.weather-forecast-days {
+  border: none;
+  border-radius: 18px;
+  padding: 20px 10px;
+  background: rgba(168, 201, 217, 0.6);
+  transition: all 200ms ease-in-out;
+}
+
+.weather-forecast-days:hover {
+  background: rgba(168, 201, 217, 1);
+}
+
 .weather-forecast-day {
   text-align: center;
-  color: rgba(44, 62, 80,0.8);
+  color: rgba(44, 62, 80, 1);
   line-height: 20px;
   margin-bottom: 8px;
 }
 
 .weather-forecast-icon {
-  font-size: 38px;
-  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 .weather-forecast-temperatures {
@@ -166,6 +183,7 @@ div.temp {
   display: flex;
   justify-content: center;
   margin-top: 8px;
+  font-size: 18px;
 }
 
 .weather-forecast-temp {

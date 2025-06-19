@@ -22,7 +22,7 @@ function refreshWeatherDetails(response) {
   let currDayandTime = document.querySelector("#dayAndTime");
   let date = new Date(response.data.time * 1000);
   currDayandTime.innerHTML = formatDate(date);
-  
+
   //video change
 
   const video = document.querySelector("#videobg");
@@ -67,9 +67,11 @@ function refreshWeatherDetails(response) {
   ) {
     changeVideoSmoothly("videos/wind.mp4");
   }
+
+  getForecast(response.data.city);
 }
 
-function formatDate(date){
+function formatDate(date) {
   let days = [
     "Sunday",
     "Monday",
@@ -85,6 +87,19 @@ function formatDate(date){
   let minutes = date.getMinutes().toString().padStart(2, "0");
   let result = `${day} ${hour}:${minutes}`;
   return result;
+}
+
+function getForecast(city) {
+  let myapiKey = `bafoe10ec41e43fbd136804atbea3503`;
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${myapiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
+
+function formatDayForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
 }
 
 function searchCity(city) {
@@ -106,43 +121,42 @@ searchCity("New Delhi");
 
 //WEATHER FORECAST
 
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function displayForecast(response) {
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index > 0 && index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `
         <div class="weather-forecast-days">
-          <div class="weather-forecast-day">${day}</div>
-          <div class="weather-forecast-icon">☀️</div>
+          <div class="weather-forecast-day">${formatDayForecast(day.time)}</div>
+          <div class="weather-forecast-icon">
+            <img src="${day.condition.icon_url}" class="weather-forecast-icon"/>
+          </div>
           <div class="weather-forecast-temperatures">
             <div class="weather-forecast-temp">
-              <strong>15°</strong>
+              <strong>${Math.round(day.temperature.maximum)}°</strong>
             </div>
             <div class="weather-forecast-temp">
-              9°
+              ${Math.round(day.temperature.minimum)}°
             </div>
           </div>  
         </div>
     `;
+    }
   });
   forecast.innerHTML = forecastHtml;
 }
 
 let forecast = document.querySelector("#forecast");
-displayForecast();
 
-// const video = document.querySelector("#videobg");
-// const source = document.getElementById("video-source");
-// if () {
-//   source.setAttribute("src", "rain.mp4");
-// } else if (description.textContent.toLowerCase().includes("clouds")) {
-//   source.setAttribute("src", "scatteredclouds.mp4");
-// } else {
-//   source.setAttribute("src", "videocloud.mp4");
-// }
+let input = document.getElementById("searchcity");
 
-// video.load(); // reload the new video
-// video.play();
+input.addEventListener("input", function () {
+  if (this.value.trim() !== "") {
+    this.classList.add("filled");
+  } else {
+    this.classList.remove("filled");
+  }
+});
