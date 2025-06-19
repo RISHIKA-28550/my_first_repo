@@ -124,7 +124,7 @@ sup.temp {
 
 .current-info p {
   color: rgba(44, 62, 80, 0.8);
-  line-height: 1.5em;
+  line-height: 1.8em;
   font-size: 18px;
   margin-top: 18px;
 }
@@ -168,7 +168,8 @@ div.temp {
   text-align: center;
   color: rgba(44, 62, 80, 1);
   line-height: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  font-weight: bold;
 }
 
 .weather-forecast-icon {
@@ -182,7 +183,7 @@ div.temp {
   color: #0e7fbc;
   display: flex;
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 18px;
 }
 
