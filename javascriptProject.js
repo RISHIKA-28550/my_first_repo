@@ -13,7 +13,12 @@ function refreshWeatherDetails(response) {
   windElement.innerHTML = `${response.data.wind.speed} km/h`;
 
   let mainCityheading = document.querySelector("h1");
-  mainCityheading.innerHTML = response.data.city;
+  // mainCityheading.innerHTML = response.data.city;
+  new Typewriter("h1", {
+    strings: response.data.city,
+    autoStart: true,
+    cursor: null,
+  });
 
   let mainEmoji = document.querySelector("#main-temp-emoji");
   mainEmoji.innerHTML = `<img src="${response.data.condition.icon_url}" alt="main-emoji" class="main-emoji"/>`;
